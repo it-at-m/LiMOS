@@ -1,0 +1,15 @@
+# Workflow for scanning GitHub workflows with actionlint
+name: actionlint
+
+on:
+  pull_request:
+
+jobs:
+  actionlint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # needed to annotate the files in a pull request with comments
+      pull-requests: write
+    steps:
+      - uses: it-at-m/lhm_actions/action-templates/actions/action-actionlint@9bde6576151908ace5f517ca623fea3b98600cb7 # v1.6.5
